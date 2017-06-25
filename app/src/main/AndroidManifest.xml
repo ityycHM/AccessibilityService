@@ -16,6 +16,30 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AccessibilityActivity"
+            android:theme="@android:style/Theme.Translucent"
+            ></activity>
+        <!--<service android:name=".service.WindowAccessibilitySeivice"
+            android:description='@string/app_name'
+            android:label='accessibility'
+            android:permission='android.permission.BIND_ACCESSIBILITY_SERVICE'
+            >
+            <intent-filter>
+                <action android:name='android.accessibilityservice.AccessibilityService' />
+            </intent-filter>
+
+            <meta-data>
+                android:name='android.accessibilityservice'
+            </meta-data>
+
+        </service>-->
+        <service
+            android:name=".service.MyAccessibilityService"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE" >
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
